@@ -32,7 +32,7 @@ export const normalizeData = (data) => {
 
 export const getNormalizedGameDataById = async (url, id) => {
     const data = await getData(`${url}/${id}`);
-    return isResponseOk(data) ? normalizeDataObject(data) : data;
+    return isResponseOk(data) ? normalizeDataObject(data) : data
 };
 
 export const getNormalizedGamesDataByCategory = async (url, category) => {
@@ -41,9 +41,9 @@ export const getNormalizedGamesDataByCategory = async (url, category) => {
         if (!data.length) {
             throw new Error("Нет игр в категории");
         }
-        return isResponseOk(data) ? normalizeData(data) : data;
+        return isResponseOk(data) ? normalizeData(data) : data
     } catch (error) {
-        return error;
+        return error
     }
 };
 
